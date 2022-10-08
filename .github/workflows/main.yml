@@ -24,7 +24,7 @@ jobs:
 
         - run: |
             docker build . -t ${{ secrets.REGISTRY_LOGIN_SERVER }}/${{ secrets.REPOSITORY_NAME }}:${{ github.run_number }}
-            docker push contoso.azurecr.io/k8sdemo:${{ github.sha }}
+            docker push registryvantiaz.azurecr.io:${{ github.sha }}
 
         - name: 'Deploy to Azure Container Instances'
           uses: 'azure/aci-deploy@v1'
